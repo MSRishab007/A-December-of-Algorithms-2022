@@ -26,6 +26,10 @@ Check out our FAQ for more information.
 ## Index
   - [**December 1 - William Butcher's Mission**](#december-1---william-butchers-mission)
   - [**December 2 - The Secret Language**](#december-2---the-secret-language)
+  - [**December 3 - Minesweeper**](#december-3---minesweeper)
+  - [**December 4 - Industry**](#december-4---industry)
+  - [**December 5 - Don’t let Mason misspend!**](#december-5---dont-let-mason-misspend)
+  - [**December 6 - Swapped**](#december-6---swapped)
   - [**FAQ**](#faq)
   
   
@@ -47,16 +51,32 @@ Check out our FAQ for more information.
    
    #### Sample Input/Output
    ```
-      Input: { 56, 6F, 75, 67, 68, 74}
+      Input: 
+      1
+      { 56, 6F, 75, 67, 68, 74}
 
       Output: Vought
 
    ```
    ```
-      Input: { 49, 6E, 76, 61, 64, 65}, {4D, 69, 6C, 69, 74, 61, 72, 79}
-      Output: Invade Military
+      Input: 
+      2
+      { 49, 6E, 76, 61, 64, 65} 
+      {4D, 69, 6C, 69, 74, 61, 72, 79}
+      
+      Output: 
+      Invade 
+      Military
 
    ``` 
+   
+   #### Explanation
+   ```
+     
+        The first line of input will specify the number of words (n). The subsequent 'n' lines will specify the word to be translated.
+        
+   ```
+    
 - **References**
     - [Arrays in C++](http://www.cplusplus.com/doc/tutorial/arrays/)
     - [Arrays in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
@@ -93,6 +113,7 @@ Help Raj translate and decode his friends' secret messages.
       Output: grammar
 
    ``` 
+   
 - **References**
     - [Pig Latin](https://en.wikipedia.org/wiki/Pig_Latin)
     - [Strings in C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
@@ -100,6 +121,271 @@ Help Raj translate and decode his friends' secret messages.
     - [String in Python](https://www.tutorialspoint.com/python/python_strings.htm)
     
 ----
+
+ ### December 3 - Minesweeper
+
+   #### Problem Statement
+  Consider a minefield made up of # and -, where each hash (#) represents a mine and each dash (-) represents a mine-free spot. Display the minefield where each dash is replaced by the number of mines immediately adjacent to the spot (horizontally, vertically, and diagonally). 
+
+   <p align="center"><img src="https://user-images.githubusercontent.com/119505502/205342027-d03a8be3-4032-44ca-a959-afbf55756d5b.jpeg" width="400"></p>
+   
+
+   
+   #### Sample Input/Output
+   ```
+ Input:
+    5
+  ["-", "-", "-", "-", "-"],
+  ["-", "-", "-", "-", "-"],
+  ["-", "-", "#", "-", "-"],
+  ["-", "-", "-", "-", "-"],
+  ["-", "-", "-", "-", "-"]
+
+ Output:
+ 
+  ["0", "0", "0", "0", "0"],
+  ["0", "1", "1", "1", "0"],
+  ["0", "1", "#", "1", "0"],
+  ["0", "1", "1", "1", "0"],
+  ["0", "0", "0", "0", "0"],
+
+  ```
+  ```
+ Input:
+    5
+  ["-", "#", "-", "-", "#"],
+  ["-", "-", "-", "-", "-"],
+  ["-", "-", "#", "-", "-"],
+  ["-", "#", "-", "-", "#"],
+  ["-", "#", "-", "-", "#"]
+
+ Output:
+ 
+  ["1", "#", "1", "1", "#"],
+  ["1", "2", "2", "2", "1"],
+  ["1", "2", "#", "2", "1"],
+  ["2", "#", "3", "3", "#"],
+  ["2", "#", "2", "2", "#"]
+
+```
+
+#### Explanation
+```
+ 
+    The first line of input shows the number of rows and columns of the minefield (2D array).
+    The next line(s) of input show the minefield with the mines and the mine-free spots. 
+    
+    ["0", "0", "0", "0", "0"],
+    ["0", "1", "1", "1", "0"],
+    ["0", "1", "#", "1", "0"],
+    ["0", "1", "1", "1", "0"],
+    ["0", "0", "0", "0", "0"],
+    
+    The output should contain the arrays of digits showing number of mines immediately adjacent (horizontally, vertically and diagonally) to a given position in the array.
+    
+```
+
+- **References**
+    - [Arrays in C++](http://www.cplusplus.com/doc/tutorial/arrays/)
+    - [Arrays in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+    - [Arrays in Python](https://www.w3schools.com/python/python_lists.asp)
+    - [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game))
+    
+----
+
+### December 4 - Industry
+
+   #### Problem Statement
+  Harper is a graduate at a bank called Pierpoint, the first assignment given to her by her boss, Eric, is to analyse the stock market rise and fall for a given set of stock market change values for n days. 
+  She must submit a report to Eric highlighting the period of time when the company should sell to maximise their profit, she must also mention the profit value. 
+  
+  Given a set of values, help Harper gather the necessary data for her report. 
+
+   <p align="center"><img src="https://user-images.githubusercontent.com/105559815/205451731-fa4f9219-8449-4f1e-a31f-0453b858bda3.gif" width="400"></p>
+   
+   
+   #### Sample Input/Output
+   ```
+ Input:
+ 
+    No. of days: 5
+
+    Given stock market change values: { 5,4,-1,7,8}
+
+  
+ Output:
+ 
+  Profit Value: 23
+  Proposed days to sell: Day: 1 to Day: 5
+  Stock market Change Values: {5,4,-1,7,8}
+
+
+  ```
+  ```
+ Input:
+ 
+    No. of Days:19
+    Given stock market change values: { 5,-4,12,-2, -5, 6, -2,-3, 1, 5, -6,-11,7,-31,9,2,-3,8,-5 }
+
+
+ Output:
+ 
+  Profit Value: 16
+  Proposed days to sell: Day: 15 to Day: 18
+  Stock market Change Values: {9, 2, -3, 8}
+
+
+```
+
+#### Explanation
+```
+    
+    The first line of input is the number of days Harper is going to consider for her analysis.
+    The second line of input is the stock market change values for those given days.
+
+    In order to find the best period of time to sell in order to maximise profit, 
+    Harper must find the maximum sum of all the stock change values in every possible subset of days from the given set.
+
+    In the given sample input, it is found that out of all the subsets obtained, the one having the maximum sum was the entire set as a whole. 
+    And thus, the company will be able to make maximum profit if they sell on all the days in that given period of time.
+
+    
+```
+- **References**
+    - [Arrays in C++](http://www.cplusplus.com/doc/tutorial/arrays/)
+    - [Arrays in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+    - [Arrays in Python](https://www.w3schools.com/python/python_lists.asp)
+    - [Maximum Sum Subarray](https://www.geeksforgeeks.org/maximum-subarray-sum-using-divide-and-conquer-algorithm/)
+    - [Divide and Conquer](https://www.geeksforgeeks.org/introduction-to-divide-and-conquer-algorithm-data-structure-and-algorithm-tutorials/)
+----
+
+### December 5 - Don’t let Mason misspend!
+#### Problem Statement
+MASON is a motoring enthusiast and he owns a sports bike . With the price of petrol going up and down in a pattern , MASON is worried whether his salary would be sufficient to meet his needs apart from fueling his bike . So he decides to calculate how much he spends on fueling his bike per month. Help MASON calculate his fuel expenditure. If he spends more than 10 PERCENTAGE of his INCOME give him  a warning message reading “EXPENDITURE EXCEEDING LIMIT”
+
+<p align="center"><img src="https://user-images.githubusercontent.com/113821083/205503831-d0cb042f-99ee-46e1-a55c-2570579ca947.jpeg" width="400"></p>
+
+ #### Conditions
+1. MASON fuels his bike twice a day .
+
+2. The PRICE of the fuel is x/l initially.
+
+3. Every third day the price goes up by 3 rupees .
+
+4. Every fifth day the price goes down by 2 rupees .
+
+5. On the other days the price of the fuel remains x/l.
+
+6. Help him to calculate his expense for a period of one month
+(31DAYS) .
+
+7. Check whether the expenditure is more than 10 percent of his income .
+
+8. His income is 50,000 rupees per month.
+
+ #### Sample Input/Output
+     
+```    
+ Input:
+  fuel_price=75
+
+Output:
+Expenditure=4686
+
+“EXPENDITURE WITHIN LIMIT”
+
+```
+    
+```
+Input:
+fuel_price=97
+
+Output:
+Expenditure=6050
+
+“EXPENDITURE EXCEEDING LIMIT”
+    
+```
+
+ #### Explanation
+ ```
+ 
+         The input is the rate of the fuel in the beginning of the month.
+        The output is the amount he must spend on fueling his bike. 
+        If the expenditure exceeds 10% of the income (i.e greater than 5000), then an alert message must be displayed.
+        
+ ```
+
+- **References**
+    - [Looping in C](https://www.tutorialspoint.com/cprogramming/c_loops.htm)
+    - [Looping in C++](https://www.programiz.com/cpp-programming/for-loop)
+    - [Looping in Java](https://www.geeksforgeeks.org/loops-in-java/)
+    - [Looping in Python](https://www.w3schools.com/python/python_for_loops.asp)
+
+----
+
+### December 6 - Swapped
+#### Problem Statement
+Bob and Tanika are best friends. They were bored so they decided to play a game. The game they chose to play involved a set of ‘n’ positive numbers. 
+The player who goes first must choose a position ‘p’ and their turn ends with that. 
+In the subsequent turns,  the player must first subtract the value in the first position by 1 and swap it with the value in position ‘p’. 
+The players will take alternate turns and the game goes on till the value in the first position becomes 0. 
+The player whose turn it is loses the game when the value in the first position becomes 0.
+Determine the winner of the game if both players play optimally and display the winner's name.
+
+
+<p align="center"><img src="https://user-images.githubusercontent.com/105559815/205705632-898b9a40-ae67-48e6-a496-abb07e90aa36.png" width="400"></p>
+
+ #### Sample Input/Output
+     
+```    
+ Input:
+  Position=3
+  Set of numbers: 5 4 4 
+  Player going first: Tanika
+
+
+Output:
+   Tanika wins the game!
+   Bob loses the game!
+
+
+```
+
+ #### Explanation
+ ```
+        1) 5 4 4 (initial)
+        
+            Tanika chooses position 3
+            
+        2) 4 4 4 (bob)
+        
+            5-1, swapping (5-1) with value in position 3 (4)
+            
+        3) 4 4 3 (tanika)
+        4) 3 4 3 (bob)
+        5) 3 4 2 (tanika)
+        6) 2 4 2 (bob)
+        7) 2 4 1 (tanika)
+        8) 1 4 1 (bob)
+        9) 1 4 0 (tanika)
+        10) 0 4 0 (bob)
+        
+        Since, on bob's turn the initial value at the first position is 0, he loses the game.
+ 
+ ```
+
+- **References**
+    - [Looping in C](https://www.tutorialspoint.com/cprogramming/c_loops.htm)
+    - [Looping in C++](https://www.programiz.com/cpp-programming/for-loop)
+    - [Looping in Java](https://www.geeksforgeeks.org/loops-in-java/)
+    - [Looping in Python](https://www.w3schools.com/python/python_for_loops.asp)
+    - [Arrays in C++](http://www.cplusplus.com/doc/tutorial/arrays/)
+    - [Arrays in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+    - [Arrays in Python](https://www.w3schools.com/python/python_lists.asp)
+
+----
+
 
 FAQ
 ======
